@@ -36,6 +36,10 @@ class FileHandlingTests(unittest.TestCase):
 
         self.assertEqual(path.read_text(encoding="utf-8"), "keep this")
 
+    def test_blank_path_is_rejected(self) -> None:
+        with self.assertRaisesRegex(ValueError, "File path cannot be empty"):
+            create_file("   ")
+
     def test_read_file_supports_utf8(self) -> None:
         path = self.root / "notes.txt"
         path.write_text("Hello, नमस्ते!", encoding="utf-8")
