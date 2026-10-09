@@ -8,6 +8,11 @@ from pathlib import Path
 
 def _to_path(file_path: str | Path) -> Path:
     """Convert a string or Path to a user-expanded filesystem path."""
+    if isinstance(file_path, str):
+        file_path = file_path.strip()
+        if not file_path:
+            raise ValueError("File path cannot be empty.")
+
     return Path(file_path).expanduser()
 
 
