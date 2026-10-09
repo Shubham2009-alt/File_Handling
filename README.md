@@ -10,7 +10,7 @@ A small menu-driven command-line application for practicing Python file operatio
 - **Append** text to the end of an existing file.
 - **Overwrite** the contents of an existing file.
 - **Delete** a file after an explicit confirmation.
-- Handle common errors such as missing files, duplicate names, invalid paths, and permission problems.
+- Reject blank file paths and handle common errors such as missing files, duplicate names, and permission problems.
 
 ## Requirements
 
@@ -62,7 +62,7 @@ The project includes unit tests using Python's built-in `unittest` framework. Fr
 python -m unittest discover -s tests -v
 ```
 
-## Project structure
+## Automatic checks\n\nGitHub Actions runs the unit tests on Python 3.10 and 3.13 whenever code is pushed or a pull request is opened. You can also run the same tests locally using the command above.\n\n## Project structure
 
 ```text
 File_Handling/
